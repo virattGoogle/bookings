@@ -1,18 +1,57 @@
 {{template "base" .}}
 
 {{define "content"}}
-<div class="container">
-    <div class="row">
-    <div class="col">
+<div id="carouselExample" class="carousel slide carousel-fade">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-slide-to="0" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg" class="d-block w-100" alt="...">
+      
     </div>
-    <h1> This is the Home Page
-    </h1> 
-    <p> This is some information about me</p>
-    <p>this came from the handeler {{index .StringMap "test"}}</p>
-    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D" >
+      <div class="carousel-item">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/sitting-rooms-hilliard-locust-18-11-20-1578948041.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://assets-global.website-files.com/5c6d6c45eaa55f57c6367749/65045f093c166fdddb4a94a5_x-65045f0266217.webp" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div class="col">
+        <h1 class="text-center" mt-4>Welcome to Vinayak's Bed and Breakfast</h1>
+        <p> Your Home Away from home, situated on the majestic Lake ontario. This will be a vacation to remeber </p>
+        <p>Nestled on the Shores of Lake Ontario: A Bed and Breakfast Retreat
 
-    </div>  
+            Escape the hustle and bustle of city life and immerse yourself in the tranquil beauty of Lake Ontario at [Bed and Breakfast Name], a charming haven where relaxation and rejuvenation await. Our idyllic location, just steps from the shimmering waters and breathtaking sunsets, provides the perfect backdrop for a memorable getaway.
+            
+            Accommodations that Embrace Comfort and Serenity
+            
+            Step into our elegantly appointed guest rooms, each thoughtfully designed to provide a sanctuary of comfort and tranquility. Unwind in plush king-sized beds, adorned with luxurious linens, and awaken each morning to the gentle sounds of waves lapping against the shore. Our rooms feature a harmonious blend of modern amenities and classic elegance, ensuring a truly exceptional stay.
+            
+            </p>
+    </div>
+  </div>
+ <div class="row">
+    <div class="col text-center">
+        <a href="/" class="btn btn-success">Make Reservation Now</a>
+    </div>
+ </div>
+  </div>
+  
 
-    </div>   
-    </div>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 {{end}}

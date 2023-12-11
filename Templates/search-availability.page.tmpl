@@ -1,0 +1,35 @@
+{{template "base" .}}
+
+{{define "content"}}
+      <div class="container">
+      <div class="row">
+        <div class="col">
+            <h1 class="text-center" mt-4>Search for Availability</h1>
+            <form action="reservation.html" method="get" novalidate class="needs-validation">
+            <div class="mb-3">
+            <div class="form-row">
+              <div id="foo">
+                <label for="start" class="form-label">Checkin Date</label>
+                <input required type="date" class="form-control" id="start" name="start" aria-describedby="emailHelp" >
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+              <div class="mb-3">
+                <label for="end" class="form-label">Check out Date</label>
+                <input required type="date" class="form-control" id="end" name="end" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+            </div>
+              <div class="mb-3 form-check">
+                <input  type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          <hr>
+
+           
+        </div>
+      </div>
+      </div>
+
+{{end}}

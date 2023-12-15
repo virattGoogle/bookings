@@ -11,7 +11,6 @@ import (
 
 func route(app *config.Appconfig) http.Handler{
 
-	//mux := pat.New()
 
 	mux:= chi.NewRouter()
 
@@ -23,8 +22,11 @@ func route(app *config.Appconfig) http.Handler{
 	mux.Get("/generals",handeler.Generals)
 	mux.Get("/majors",handeler.Majors)
 	mux.Get("/search-availability",handeler.Availability)
+	mux.Post("/search-availability",handeler.PostAvailability)
 	mux.Get("/contact",handeler.Contact)
 	mux.Get("/make-reservation",handeler.Reservation)
+	mux.Post("/make-reservation",handeler.PostReservation)
+	mux.Get("/search-availability-json",handeler.AvailabilityJson)
 
 	mux.Get("/About",handeler.About)
 	fileServer := http.FileServer(http.Dir("./static/"))

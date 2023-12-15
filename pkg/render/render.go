@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+
+	"github.com/justinas/nosurf"
 	"github.com/virattGoogle/bookings/pkg/config"
 	"github.com/virattGoogle/bookings/pkg/models"
 )
@@ -14,7 +16,7 @@ func Newtemplate(a *config.Appconfig){
 	app =a
 }
 
-func RenderTemplate(w http.ResponseWriter, tmpl string,td *models.Templatedata) {
+func RenderTemplate(w http.ResponseWriter,r *http.Request, tmpl string,td *models.Templatedata) {
 
 	tc:= app.TemplateCache
 
@@ -25,6 +27,8 @@ func RenderTemplate(w http.ResponseWriter, tmpl string,td *models.Templatedata) 
 	}
 
 	buf := new(bytes.Buffer)
+
+	td = AddDefaultdata(td,r)
 
 	err := t.Execute(buf, td)
 
@@ -37,6 +41,12 @@ func RenderTemplate(w http.ResponseWriter, tmpl string,td *models.Templatedata) 
 		log.Println(err)
 	}
 
+}
+
+func AddDefaultdata(td *models.Templatedata, r *http.Request) *models.Templatedata {
+	td.CSRFToken =nosurf.Token(r)
+	
+	return td
 }
 
 func Createttemplatecache() (map[string]*template.Template, error) {
